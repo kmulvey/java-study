@@ -81,7 +81,20 @@ public class LinkedList {
 			curr = curr.next;
 		}
 	}
-
+	// does not make assumptions about how many there may be
+	public void removeItem(Link item) {
+		Link curr = firstLink;
+		Link prev = firstLink;
+		while (curr.next != null && curr != null) {
+			if(curr.bookName.equals(item.bookName)){
+				prev.next = curr.next;
+			}
+			prev = curr;
+			curr = curr.next;
+		}
+	}
+	
+	// this is inclusive
 	public LinkedList slice(int start, int end) {
 		LinkedList result = new LinkedList();
 		Link curr = firstLink;

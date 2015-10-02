@@ -30,4 +30,17 @@ public class LinkedListTest {
 		
 		Assert.assertEquals(3, sliced.size());
 	}
+	
+	@Test
+  public void remove() {
+		LinkedList ll = new LinkedList();
+		ll.insertFirstLink("gatsby", 1);
+		ll.insertFirstLink("mockingbird", 2);
+		ll.insertFirstLink("catcher", 3);
+		ll.insertFirstLink("siddhartha", 4);
+		ll.insertFirstLink("catcher", 5);
+		ll.insertFirstLink("gatsby", 6);
+		ll.removeItem(new Link("catcher", 1));
+		Assert.assertEquals(4, ll.size());
+	}
 }
