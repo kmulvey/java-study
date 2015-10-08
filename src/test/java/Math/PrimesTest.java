@@ -16,6 +16,5 @@ public class PrimesTest {
 		expected.add(5);
 		expected.add(7);
 		Assert.assertEquals(expected, Primes.getPrimes(10));
-		System.out.println(Primes.getPrimes(1000));
 	}
 }
