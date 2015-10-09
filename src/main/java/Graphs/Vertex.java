@@ -1,8 +1,13 @@
 package Graphs;
 
+import java.util.HashMap;
+
 public class Vertex {
-	final private String id;
-	final private String name;
+	private final String id;
+	private final String name;
+	private final HashMap<Vertex, Integer> neighbors = new HashMap<Vertex, Integer>();
+	private int dist = Integer.MAX_VALUE;
+	private Vertex previous = null;
 
 	public Vertex(String id, String name) {
 		this.id = id;
@@ -15,6 +20,26 @@ public class Vertex {
 
 	public String getName() {
 		return name;
+	}
+
+	public int getDist() {
+		return dist;
+	}
+
+	public void setDist(int dist) {
+		this.dist = dist;
+	}
+
+	public HashMap<Vertex, Integer> getNeighbors() {
+		return neighbors;
+	}
+
+	public Vertex getPrevious() {
+		return previous;
+	}
+
+	public void setPrevious(Vertex previous) {
+		this.previous = previous;
 	}
 
 	@Override
@@ -31,19 +56,19 @@ public class Vertex {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		
+
 		Vertex other = (Vertex) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		
+
 		return true;
 	}
-	
+
 	@Override
-	public String toString(){
+	public String toString() {
 		return name;
 	}
 }
