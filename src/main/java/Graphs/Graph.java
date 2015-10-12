@@ -21,7 +21,7 @@ public class Graph {
 		return edges;
 	}
 
-	/** Implementation of dijkstra's algorithm using a binary heap. */
+	/* dijkstra's algorithm using a binary heap. */
 	public void dijkstra(final NavigableSet<Vertex> q){
 		Vertex u, v;
 		while(!q.isEmpty()){
