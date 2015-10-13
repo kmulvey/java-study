@@ -11,6 +11,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		comparator = comp;
 	}
 
+	public Node<T> getRootNode() {
+		return rootNode;
+	}
+
 	private int compare(T x, T y) {
 		if (comparator == null)
 			return x.compareTo(y);
@@ -46,6 +50,24 @@ public class BinarySearchTree<T extends Comparable<T>> {
 					}
 				}
 			}
+		}
+	}
+
+	public void inOrderTraversal(Node<T> n) {
+		if (n != null) {
+			inOrderTraversal(n.getLeft());
+			System.out.println(n.getData());
+			inOrderTraversal(n.getRight());
+		}
+	}
+
+	public void flip(Node<T> n) {
+		if (n != null) {
+			Node<T> tmp = n.getLeft();
+			n.setLeft(n.getRight());
+			n.setRight(tmp);
+			flip(n.getLeft());
+			flip(n.getRight());
 		}
 	}
 }

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class BinarySearchTreeTest {
 	@Test
-	public void test(){
+	public void test() {
 		BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>(new IntCompare());
 		bst.insert(8);
 		bst.insert(3);
@@ -18,14 +18,15 @@ public class BinarySearchTreeTest {
 		bst.insert(10);
 		bst.insert(14);
 		bst.insert(13);
+
+		bst.inOrderTraversal(bst.getRootNode());
+		bst.flip(bst.getRootNode());
+		bst.inOrderTraversal(bst.getRootNode());
 	}
 }
 
-
-class IntCompare implements Comparator<Integer>
-{
-   public int compare(Integer x, Integer y)
-   {
-        return x-y;
-   }
+class IntCompare implements Comparator<Integer> {
+	public int compare(Integer x, Integer y) {
+		return x - y;
+	}
 }
