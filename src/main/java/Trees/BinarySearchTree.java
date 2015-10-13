@@ -1,5 +1,6 @@
 package Trees;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -71,17 +72,34 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			flip(n.getRight());
 		}
 	}
-	
+
 	// insert from array while minimizing height of tree
 	public void insertFromArray(T[] vals) {
-		if(vals.length == 0) return;
+		if (vals.length == 0)
+			return;
 		if (vals.length == 1)
 			insert(vals[0]);
 		else {
 			int middle = vals.length / 2;
 			insert(vals[middle]);
 			insertFromArray(Arrays.copyOfRange(vals, 0, middle));
-			insertFromArray(Arrays.copyOfRange(vals, middle+1, vals.length));
+			insertFromArray(Arrays.copyOfRange(vals, middle + 1, vals.length));
+		}
+	}
+
+	public void prettyPrint(Node<T> n, ArrayList<String> levels, int level) {
+		if (n != null) {
+			int next = level + 1;
+			if (level < levels.size())
+				levels.set(level, levels.get(level) + " " + n.getData());
+			else
+				levels.add(level, n.getData().toString());
+			prettyPrint(n.getLeft(), levels, next);
+			prettyPrint(n.getRight(), levels, next);
+			
+			for(String l: levels){
+				System.out.println(l);
+			}
 		}
 	}
 }

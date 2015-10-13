@@ -1,5 +1,6 @@
 package Trees;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 
 import org.junit.Test;
@@ -18,6 +19,7 @@ public class BinarySearchTreeTest {
 		bst.insert(10);
 		bst.insert(14);
 		bst.insert(13);
+		bst.prettyPrint(bst.getRootNode(), new ArrayList<String>(), 0);
 
 //		bst.inOrderTraversal(bst.getRootNode());
 //		bst.flip(bst.getRootNode());
