@@ -1,5 +1,6 @@
 package Trees;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class BinarySearchTree<T extends Comparable<T>> {
@@ -68,6 +69,19 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			n.setRight(tmp);
 			flip(n.getLeft());
 			flip(n.getRight());
+		}
+	}
+	
+	// insert from array while minimizing height of tree
+	public void insertFromArray(T[] vals) {
+		if(vals.length == 0) return;
+		if (vals.length == 1)
+			insert(vals[0]);
+		else {
+			int middle = vals.length / 2;
+			insert(vals[middle]);
+			insertFromArray(Arrays.copyOfRange(vals, 0, middle));
+			insertFromArray(Arrays.copyOfRange(vals, middle+1, vals.length));
 		}
 	}
 }
