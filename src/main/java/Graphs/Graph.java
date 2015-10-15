@@ -22,16 +22,17 @@ public class Graph {
 	}
 
 	/* dijkstra's algorithm using a binary heap. */
-	public void dijkstra(final NavigableSet<Vertex> q){
+	public void dijkstra(final NavigableSet<Vertex> q) {
 		Vertex u, v;
-		while(!q.isEmpty()){
+		while (!q.isEmpty()) {
 			u = q.pollFirst();
-			if(u.getDist() == Integer.MAX_VALUE) break;
-			
-			for(Map.Entry<Vertex, Integer> a : u.getNeighbors().entrySet()){
+			if (u.getDist() == Integer.MAX_VALUE)
+				break;
+
+			for (Map.Entry<Vertex, Integer> a : u.getNeighbors().entrySet()) {
 				v = a.getKey();
 				final int alternateDist = u.getDist() + a.getValue();
-				if(alternateDist < v.getDist()){
+				if (alternateDist < v.getDist()) {
 					q.remove(v);
 					v.setDist(alternateDist);
 					v.setPrevious(u);
