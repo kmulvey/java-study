@@ -15,6 +15,27 @@ public class Sorts {
 		return arr;
 	}
 
+	public static int[] shellSort(int[] arr) {
+		int inner, outer, tmp, interval = 1;
+
+		while (interval <= arr.length / 3) {
+			interval = interval * 3 + 1;
+			while (interval > 0) {
+				for (outer = interval; outer < arr.length; outer++) {
+					tmp = arr[outer];
+					inner = outer;
+					while (inner > interval - 1 && arr[inner - interval] >= tmp) {
+						arr[inner] = arr[inner - interval];
+						inner -= interval;
+					}
+					arr[inner] = tmp;
+				}
+				interval = (interval - 1) / 3;
+			}
+		}
+		return arr;
+	}
+
 	public static int[] mergeSort(int[] arr, int lo, int hi) {
 		int low = lo, high = hi;
 		if (low >= high)
@@ -42,4 +63,5 @@ public class Sorts {
 		}
 		return arr;
 	}
+
 }
