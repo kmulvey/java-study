@@ -10,9 +10,9 @@ public class LetterCaseTest {
 
 	@Test
 	public void testLower(){
-		Assert.assertEquals(Case.LOWER, LetterCase.isLowercase('a'));
-		Assert.assertEquals(Case.UPPER, LetterCase.isLowercase('A'));
-		Assert.assertEquals(Case.LOWER, LetterCase.isLowercase('b'));
-		Assert.assertEquals(Case.UPPER, LetterCase.isLowercase('B'));
+		Assert.assertEquals(Case.LOWER, LetterCase.getCase('a'));
+		Assert.assertEquals(Case.UPPER, LetterCase.getCase('A'));
+		Assert.assertEquals(Case.LOWER, LetterCase.getCase('b'));
+		Assert.assertEquals(Case.UPPER, LetterCase.getCase('B'));
 	}
 }
