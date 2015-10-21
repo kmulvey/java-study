@@ -35,7 +35,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			while (true) {
 				parent = curr;
 				// less than goes left
-				int diff = compare(data, curr.getData());
 				if (compare(data, curr.getData()) == 0) {
 					return;
 				} else if (compare(data, curr.getData()) < 0) {
