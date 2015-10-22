@@ -1,7 +1,9 @@
-package Sorting;
+package Pearls;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import Pearls.MissingNumber;
 
 public class MissingNumberTest {
 
