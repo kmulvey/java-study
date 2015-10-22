@@ -1,6 +1,8 @@
-package Sorting;
+package Pearls;
 
 import java.util.Arrays;
+
+import Sorting.Sorts;
 
 public class MissingNumber {
 	// Given: an unsorted array of numbers (0 <= x <= 100), with some missing
@@ -18,8 +20,8 @@ public class MissingNumber {
 
 	// Given: an unsorted array of numbers (0 <= x <= 100), with some missing
 	// Return: a missing number from the set
-	// Time time: f(n) ∈ O(n)
-	// Space time: f(n) ∈ O(n)
+	// Time complexity: f(n) ∈ O(n)
+	// Space complexity: f(n) ∈ O(n)
 	// Method: this uses a fake bit array to do the "sorting" rather than a proper sorting
 	// algorithm
 	
