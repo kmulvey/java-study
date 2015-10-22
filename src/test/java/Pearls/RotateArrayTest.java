@@ -25,4 +25,16 @@ public class RotateArrayTest {
 		Integer[] expected = { 6, 7, 1, 2, 3, 4, 5 };
 		Assert.assertArrayEquals(expected, ra.rotateRight(nums, 2));
 	}
+
+	@Test
+	public void juggleLeftTest() {
+		Integer[] nums = { 1, 2, 3, 4, 5, 6, 7 };
+		Integer[] expected = { 3, 4, 5, 6, 7, 1, 2 };
+		Assert.assertArrayEquals(expected, ra.juggleLeft(nums, 2));
+	}
+
+	@Test
+	public void gcdTest() {
+		Assert.assertEquals(8, ra.gcd(520, 4096));
+	}
 }
