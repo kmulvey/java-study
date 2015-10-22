@@ -11,6 +11,7 @@ public class RotateArray<T> {
 	// Time complexity: f(n) ∈ O(n*numPositions)
 	// Space complexity: f(n) ∈ O(1)
 	public T[] rotateLeft(T[] array, int numPositions) {
+		if(numPositions == 0 || numPositions == array.length) return array;
 		for (int k = 0; k < numPositions; k++) {
 			T firstEle = array[0];
 			int i;
@@ -28,6 +29,7 @@ public class RotateArray<T> {
 	// Time complexity: f(n) ∈ O(n*numPositions)
 	// Space complexity: f(n) ∈ O(1)
 	public T[] rotateRight(T[] array, int numPositions) {
+		if(numPositions == 0 || numPositions == array.length) return array;
 		for (int k = 0; k < numPositions; k++) {
 			T temp = array[array.length - 1];
 			int i;
@@ -39,24 +41,25 @@ public class RotateArray<T> {
 		return array;
 	}
 
-	public T[] juggleLeft(T arr[], int numPositions) {
+	public T[] juggleLeft(T array[], int numPositions) {
+		if(numPositions == 0 || numPositions == array.length) return array;
 		T t;
 		int j, k;
-		for (int i = 0; i < gcd(numPositions, arr.length); i++) {
-			t = arr[i];
+		for (int i = 0; i < gcd(numPositions, array.length); i++) {
+			t = array[i];
 			j = i;
 			while (true) {
 				k = j + numPositions;
-				if (k >= arr.length)
-					k -= arr.length;
+				if (k >= array.length)
+					k -= array.length;
 				if (k == i)
 					break;
-				arr[j] = arr[k];
+				array[j] = array[k];
 				j = k;
 			}
-			arr[j] = t;
+			array[j] = t;
 		}
-		return arr;
+		return array;
 	}
 
 	public int gcd(int a, int b) {
