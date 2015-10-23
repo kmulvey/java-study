@@ -18,4 +18,10 @@ public class MissingNumberTest {
 		int[] nums = { 6, 2, 5, 4, 10, 7, 9, 1, 8, 0 };
 		Assert.assertEquals(3, MissingNumber.findBit(nums));
 	}
+
+//	@Test
+//	public void findBinarySearchTest() {
+//		Integer[] nums = { 6, 2, 5, 4, 10, 7, 9, 1, 8, 0 };
+//		Assert.assertEquals(3, MissingNumber.findBinarySearch(nums, 0));
+//	}
 }
