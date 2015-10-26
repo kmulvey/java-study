@@ -23,9 +23,10 @@ public class MissingNumber {
 	// Return: a missing number from the set
 	// Time complexity: f(n) ∈ O(n)
 	// Space complexity: f(n) ∈ O(n)
-	// Method: this uses a fake bit array to do the "sorting" rather than a proper sorting
+	// Method: this uses a fake bit array to do the "sorting" rather than a proper
+	// sorting
 	// algorithm
-	
+
 	public static int findBit(int[] input) {
 		int[] bitArr = new int[11];
 		Arrays.fill(bitArr, 0);
@@ -39,20 +40,24 @@ public class MissingNumber {
 		}
 		return -1;
 	}
-	
+
 	// WIP
-	public static int findBinarySearch(Integer[] input, int bit){
+	public static int findBinarySearch(Integer[] input, int bit) {
 		ArrayList<Integer> zeroBits = new ArrayList<Integer>();
 		ArrayList<Integer> oneBits = new ArrayList<Integer>();
-		
-		for(int i=0; i<input.length; i++){
-			if(Integer.toBinaryString(input[i]).charAt(bit) == '0') zeroBits.add(input[i]);
-			else oneBits.add(input[i]);
+
+		for (int i = 0; i < input.length; i++) {
+			if (Integer.toBinaryString(input[i]).charAt(bit) == '0')
+				zeroBits.add(input[i]);
+			else
+				oneBits.add(input[i]);
 		}
-		if(zeroBits.size() > oneBits.size()) findBinarySearch(zeroBits.toArray(new Integer[zeroBits.size()]), bit+1);
-		else findBinarySearch(oneBits.toArray(new Integer[oneBits.size()]), bit+1);
+		if (zeroBits.size() > oneBits.size())
+			findBinarySearch(zeroBits.toArray(new Integer[zeroBits.size()]), bit + 1);
+		else
+			findBinarySearch(oneBits.toArray(new Integer[oneBits.size()]), bit + 1);
 
 		return 1;
-		
+
 	}
 }
