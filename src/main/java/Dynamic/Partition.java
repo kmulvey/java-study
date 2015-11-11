@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import Sorting.Sorts;
 
 public class Partition {
+	public Partition(){
+		
+	}
+	
+	
 	public ArrayList<ArrayList<Integer>> greedy(int[] values, int K) {
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 
