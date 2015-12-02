@@ -14,4 +14,12 @@ public class PermutationTest {
 		Assert.assertEquals(true, Permutation.isPerm("dogs and cats", "cats and dogs", false));
 		Assert.assertEquals(true, Permutation.isPerm("as1ssdf", "sfdsas1", true));
 	}
+	
+	@Test
+	public void palindrome() {
+		Assert.assertEquals(true, Permutation.isPalindromePerm("racecar"));
+		Assert.assertEquals(true, Permutation.isPalindromePerm("carrace"));
+		Assert.assertEquals(false, Permutation.isPalindromePerm("dogs and cats"));
+		Assert.assertEquals(false, Permutation.isPalindromePerm("aaasdddw"));
+	}
 }
