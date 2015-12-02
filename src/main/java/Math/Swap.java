@@ -11,4 +11,14 @@ public class Swap {
 
 		return Integer.toString(first) + Integer.toString(second);
 	}
+	
+	public static String XORSwap(int first, int second){
+		if(first!=second){
+			first ^=second;
+			second^=first;
+			first ^=second;
+		}
+		return Integer.toString(first) + Integer.toString(second);
+
+	}
 }
