@@ -3,7 +3,7 @@ package Matrices;
 import java.util.Arrays;
 
 public class Matrix {
-	int[][] grid;
+	private int[][] grid;
 
 	public Matrix(int[][] input) {
 		this.grid = input;
@@ -28,6 +28,14 @@ public class Matrix {
 		return result.toString();
 	}
 
+	public int[][] getGrid() {
+		return grid;
+	}
+
+	public void setGrid(int[][] grid) {
+		this.grid = grid;
+	}
+
 	public void rotate() {
 		for (int layer = 0; layer < grid.length / 2; ++layer) {
 			int first = layer;
@@ -47,5 +55,14 @@ public class Matrix {
 				grid[i][last] = top;
 			}
 		}
+	}
+
+	public void square() {
+		int[][] result = new int[grid.length][grid[0].length];
+		for (int i = 0; i < grid.length; i++)
+			for (int j = 0; j < grid[i].length; j++)
+				for (int k = 0; k < grid.length; k++)
+					result[i][j] += grid[i][k] * grid[k][j];
+		grid = result;
 	}
 }
